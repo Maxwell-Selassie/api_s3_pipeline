@@ -1,0 +1,14 @@
+[project]
+name = "api-s3-pipeline"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "apscheduler>=3.11.2",
+    "boto3>=1.42.54",
+    "pandas>=3.0.1",
+    "python-dotenv>=1.2.1",
+    "requests>=2.32.5",
+    "tenacity>=9.1.4",
+]
