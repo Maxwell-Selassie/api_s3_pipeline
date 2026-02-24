@@ -1,0 +1,48 @@
+# Configuration file for this project
+
+weather_api:
+  api_base_url: "https://api.open-meteo.com/v1/forecast"
+  location:
+    name: "London"
+    lat: 51.5074
+    lon: -0.1278
+    timezone: "Europe/London"
+
+    name: "Accra"
+    lat: 47.7654
+    lon: -1.1237
+    timezone: "Afica/Accra"
+
+    name: "Paris"
+    lat: 65.3467
+    lon: -0.4321
+    timezone: "Europe/Paris"
+
+    name: "Los Angeles"
+    lat: 42.5412
+    lon: -1.4367
+    timezone: "America/Los Angeles"
+
+    name: "Singapore"
+    lat: 52.4354
+    lon: 1.4781
+    timezone: "Asia/Singapore"
+
+  # Data requirements
+  request_params:
+    forecast_days: 1
+    hourly_variables:
+      - "temperatue_2m"
+      - "relative_humidity_2m"
+      - "wind_speed_10m"
+      - "visibility"
+      - "wind_speed_10m"
+      - "wind_direction_10m"
+
+s3:
+  bucket_name: "weather-pipeline-raw-maxwell-selassie"
+  aws_region: "us-east-1"
+  folder_names:
+    - "raw"
+    - "processed"
+  partition: "date"
