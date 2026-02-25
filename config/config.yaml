@@ -2,47 +2,47 @@
 
 weather_api:
   api_base_url: "https://api.open-meteo.com/v1/forecast"
-  location:
-    name: "London"
-    lat: 51.5074
-    lon: -0.1278
-    timezone: "Europe/London"
 
-    name: "Accra"
-    lat: 47.7654
-    lon: -1.1237
-    timezone: "Afica/Accra"
+  cities:
+    - name: "london"
+      lat: 51.5074
+      lon: -0.1278
+      timezone: "Europe/London"
 
-    name: "Paris"
-    lat: 65.3467
-    lon: -0.4321
-    timezone: "Europe/Paris"
+    - name: "accra"
+      lat: 5.6037
+      lon: -0.1870
+      timezone: "Afica/Accra"
 
-    name: "Los Angeles"
-    lat: 42.5412
-    lon: -1.4367
-    timezone: "America/Los Angeles"
+    - name: "paris"
+      lat: 48.8566
+      lon: 2.3522
+      timezone: "Europe/Paris"
 
-    name: "Singapore"
-    lat: 52.4354
-    lon: 1.4781
-    timezone: "Asia/Singapore"
+    - name: "los_angeles"
+      lat: 34.0522
+      lon: -118.2437
+      timezone: "America/Los Angeles"
+
+    - name: "singapore"
+      lat: 1.3521
+      lon: 103.8198
+      timezone: "Asia/Singapore"
 
   # Data requirements
   request_params:
-    forecast_days: 1
     hourly_variables:
-      - "temperatue_2m"
+      - "temperature_2m"
       - "relative_humidity_2m"
       - "wind_speed_10m"
       - "visibility"
-      - "wind_speed_10m"
+      - "precipitation"
       - "wind_direction_10m"
 
 s3:
   bucket_name: "weather-pipeline-raw-maxwell-selassie"
   aws_region: "us-east-1"
-  folder_names:
+  folders:
     - "raw"
     - "processed"
-  partition: "date"
+  partition_format: "year={year}/month={month}/day={day}"
