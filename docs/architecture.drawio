@@ -1,0 +1,141 @@
+<mxfile host="65bd71144e">
+    <diagram id="M3-cmDZ9-qTBTO-RpeD4" name="Page-1">
+        <mxGraphModel dx="946" dy="505" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=api" parent="1" vertex="1">
+                    <mxGeometry x="20" y="136" width="70.83" height="68" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="" style="edgeStyle=none;html=1;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="320" y="169" as="targetPoint"/>
+                        <mxPoint x="270" y="169" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="56" value="x5" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="24">
+                    <mxGeometry x="0.0533" y="1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="10" value="INGESTION" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="150" y="140" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="" style="edgeStyle=none;html=1;" parent="1" source="23" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="490" y="170" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="54" value="x5" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="26">
+                    <mxGeometry x="0.1733" y="1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="23" value="LOAD" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="140" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="" style="edgeStyle=none;html=1;" parent="1" source="27" target="32" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.bucket;" parent="1" vertex="1">
+                    <mxGeometry x="490" y="136" width="75" height="78" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="" style="endArrow=classic;html=1;exitX=1.026;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;shadow=0;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="90.83157999999995" y="169.5" as="sourcePoint"/>
+                        <mxPoint x="148.16" y="169.5" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="29" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;SOURCE API&lt;/h1&gt;&lt;p&gt;Request hourly data from 5 cities after every 24 hours&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="10" y="214" width="140" height="186" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;INGESTION FROM SOURCE&lt;/h1&gt;&lt;div&gt;A python script will be used to send requests to openmeteo&#39;s api requesting for data. Problems taht could arise include:&lt;/div&gt;&lt;div&gt;1. Network/connection errors&lt;/div&gt;&lt;div&gt;2. Authentication errors&lt;/div&gt;&lt;div&gt;3. Incomplete data due to incorrect request&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="150" y="214" width="150" height="270" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;LOAD RAW DATA INTO S3&lt;/h1&gt;&lt;p&gt;In this stage, another python script is written to load the ingested raw data from the api source into an S3 bucket partitioned by dates. Potential issues include:&amp;nbsp; 1. Network/connection issues to AWS S3 bucket 2. Wrong configurations in AWS&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 3.&amp;nbsp;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;Incorrect partitioning&lt;/span&gt;&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="214" width="140" height="286" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;S3 BUCKETS&lt;/h1&gt;&lt;p&gt;Raw data ingested into S3 bucket partitioned by data, still in json format from source api into S3 bucket.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="480" y="214" width="130" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="" style="endArrow=classic;html=1;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="570" y="170" as="sourcePoint"/>
+                        <mxPoint x="620" y="170" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="59" value="X5" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="34">
+                    <mxGeometry x="-0.0667" y="1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="37" value="" style="edgeStyle=none;html=1;" parent="1" source="35" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="790" y="170" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="60" value="X5" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="37">
+                    <mxGeometry x="-0.0267" y="1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="35" value="READ" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="620" y="140" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="" style="edgeStyle=none;html=1;entryX=-0.023;entryY=0.415;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="36" target="38" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="960" y="170" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="36" value="TRANSFORM" style="whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
+                    <mxGeometry x="790" y="140" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.csv_file;" parent="1" vertex="1">
+                    <mxGeometry x="990" y="153.5" width="59" height="43" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;READ FROM S3&lt;/h1&gt;&lt;p&gt;Ingest raw JSON data from S3 partitioned by date using a python scripts. Potential issues include:&lt;/p&gt;&lt;p&gt;1. Network/connection issues, wrong configurations, authentication&lt;/p&gt;&lt;p&gt;2. Incorrect/incomplete data due to bad scripts&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="630" y="214" width="140" height="260" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;TRANSFORM DATA&lt;/h1&gt;&lt;p&gt;Now transform json data into flat rows using python scripts.&amp;nbsp;&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="790" y="214" width="160" height="266" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;SAVE NORMALIZED JSON DATA AS CSV FILE&lt;/h1&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="970" y="214" width="160" height="186" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/general/Scheduler.svg;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="50" width="68" height="68" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="SCHEDULER: RUNS DAILY AT MIDNIGHT&amp;nbsp;&lt;div&gt;BACKFILL HANDLING, RETRIES&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="110" y="50" width="950" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="" style="endArrow=classic;html=1;exitX=1.026;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;shadow=0;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="90.83" y="152.5" as="sourcePoint"/>
+                        <mxPoint x="147.83" y="152.5" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="49" value="" style="endArrow=classic;html=1;exitX=1.026;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;shadow=0;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="90.83" y="160" as="sourcePoint"/>
+                        <mxPoint x="147.83" y="160" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="50" value="" style="endArrow=classic;html=1;exitX=1.026;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;shadow=0;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="90.83" y="180" as="sourcePoint"/>
+                        <mxPoint x="147.82999999999998" y="180" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="51" value="" style="endArrow=classic;html=1;exitX=1.026;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;shadow=0;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="90.83" y="190" as="sourcePoint"/>
+                        <mxPoint x="147.82999999999998" y="190" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="61" value="LOGGING" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="500" width="1010" height="40" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
