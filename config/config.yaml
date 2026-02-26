@@ -9,10 +9,10 @@ weather_api:
       lon: -0.1278
       timezone: "Europe/London"
 
-    - name: "accra"
-      lat: 5.6037
-      lon: -0.1870
-      timezone: "Afica/Accra"
+    - name: "berlin"
+      lat: 52.52
+      lon: 13.41
+      timezone: "Europe/Berlin"
 
     - name: "paris"
       lat: 48.8566
@@ -20,8 +20,8 @@ weather_api:
       timezone: "Europe/Paris"
 
     - name: "los_angeles"
-      lat: 34.0522
-      lon: -118.2437
+      lat: 52.52
+      lon: 13.41
       timezone: "America/Los Angeles"
 
     - name: "singapore"
