@@ -29,6 +29,7 @@ def test_api():
     print(f"API connection OK - keys: ",list(data.keys()))
     print(f"Hourly variables: ",list(data["hourly"].keys()))
     print(f"Hours of data: ",len(data["hourly"]["time"]))
+    
 
 if __name__ == "__main__":
     test_s3()
